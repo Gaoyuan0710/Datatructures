@@ -1,0 +1,1 @@
+document.write('<li><a href="http://www.csdn.net/article/2013-11-08/2817438" target=_blank>一周消息树：程序员爆在谷歌工作最糟糕的事 黑莓换帅</a></li><li><a href="http://www.csdn.net/article/2013-11-08/2817432-twitter-ipo" target=_blank>Twitter上市首战告捷的四大因素</a></li>');

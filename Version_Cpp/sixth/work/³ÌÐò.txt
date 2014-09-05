@@ -1,0 +1,72 @@
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <string.h>
+#define LEN sizeof(Charactor) 
+ 
+typedef struct charactor 
+{ 
+    char key[3]; 
+    int count; 
+    struct charactor *next; 
+}Charactor; 
+ 
+Charactor *add(char *c,Charactor *head) //查找记数
+{ 
+    int flag=1; 
+    Charactor *p=head; 
+    while(p!=NULL&&flag==1) 
+    { 
+        if(strcmp(p->key,c) == 0) 
+            flag=0; 
+        else 
+            p=p->next; 
+    } 
+     
+    if(flag==0) 
+        p->count++; 
+    else 
+    { 
+        p=head; 
+     
+        head=(Charactor *)malloc(LEN); 
+        strcpy(head->key,c); 
+        head->count=1; 
+        head->next=p; 
+    } 
+    return head; 
+} 
+ 
+ 
+void display(Charactor *p)  //输出
+{ 
+ 
+    printf("\n The result are:\n"); 
+    while(p!=NULL) 
+    { 
+        printf("%s: %d\t",p->key,p->count); 
+        p=p->next; 
+    } 
+} 
+ 
+void main() 
+{ 
+    Charactor *head=NULL; 
+    char ch[3]; 
+ 
+    FILE *fstream;
+    if((fstream = fopen("1.txt","r")) == NULL)
+    { exit(-1); }
+ 
+    while( !feof(fstream) ) 
+    {   
+        fscanf(fstream,"%2s",ch);
+        head=add(ch,head); 
+    } 
+ 
+    display(head); 
+ 
+    system("PAUSE");
+} 
+ 
+ 
+ 
