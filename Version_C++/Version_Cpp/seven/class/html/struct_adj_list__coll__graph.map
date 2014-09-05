@@ -1,4 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$struct_vertex_node.html" title="{VertexNode\n|+ vaxdata\l+ head\l|}" alt="" coords="5,177,96,279"/>
-<area shape="rect" id="node4" href="$struct_arc_node.html" title="{ArcNode\n|+ adj\l+ next\l|}" alt="" coords="15,6,87,109"/>
-</map>

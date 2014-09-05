@@ -1,1 +1,0 @@
-document.write('<li><a href="http://www.csdn.net/article/2013-11-07/2817426-interview-financial-case-yuerbao-aliyun" target=_blank>从Oracle到MySQL，余额宝云实践分享</a></li>');
