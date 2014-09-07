@@ -18,7 +18,7 @@
 
 using std::ostream;
 
-//namespace gaoyuan{
+namespace gaoyuan{
 
 template <class T>
 
@@ -35,5 +35,5 @@ class LinearList{
 	protected:
 		int n;  
 };
-//}
+}
 

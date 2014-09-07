@@ -22,7 +22,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-//namespace gaoyuan {
+namespace gaoyuan {
 
 template <class T>
 class SeqList:public LinearList<T> {
@@ -148,4 +148,4 @@ void SeqList<T>::Output(ostream & out) const{
 	}
 	out << endl;
 }
-//}
+}

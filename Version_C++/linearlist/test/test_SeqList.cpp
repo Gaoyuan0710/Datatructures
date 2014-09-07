@@ -18,7 +18,7 @@
 //#include "../linearlist.h"
 #include "../SeqList.h"
 
-//using namespace gaoyuan;
+using namespace gaoyuan;
 
 using std::cout;
 using std::cin;
