@@ -1,11 +1,11 @@
 // =====================================================================================
 // 
-//       Filename:  BTNode.cpp
+//       Filename:  BinaryTree.cpp
 //
 //    Description:  
 //
 //        Version:  1.0
-//        Created:  2014年09月09日 11时11分55秒
+//        Created:  2014年09月09日 17时45分58秒
 //       Revision:  none
 //       Compiler:  g++
 //
@@ -15,24 +15,19 @@
 // =====================================================================================
 
 #include <iostream>
+#include "BTNode.h"
 
 template <class T>
 
-class BTNode{
+class BinaryTree{
 	public:
-		BTNode(){
-			rChild = lChild = NULL;
+		BinaryTree(){
+			root = NULL;
 		}
-		BTNode(const T &x){
-			element = x;
-			rChild = lChild = NULL;
-		}
-		BTNode(const T &x, BTNode<T> *l, BTNode<T> *r){
-			element = x;
-			rChild = r;
-			lChild = l;
-		}
+	protected:
+		BTNode<T> *root;
 	private:
-		T element;
-		BTNode<T> *lChild, *rChild;
-}
+		void Clear(BTNode<T> *& t);
+		void PreOrder(void ())
+
+} 
