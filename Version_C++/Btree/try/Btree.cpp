@@ -40,7 +40,6 @@ class BTree{
 		}
 		void CreatBTree(BTNode *root);
 		void PreOder(void (*Visit(char ch)), BTNode *root);
-	private:
 		BTNode *root;
 };
 
@@ -54,10 +53,10 @@ void BTree::CreatBTree(BTNode *root){
 		root = NULL;
 	}
 	else{
-		*root = (BTree)malloc(sizeof(BTNode));
+		*root = (BTNode)malloc(sizeof(BTNode));
 		*root->element = tmp;
-		CreatBTree(&(*root->LChild));
-		CreatBTree(&(*root->RChild));
+		CreatBTree(((*root)->LChild));
+		CreatBTree(((*root)->RChild));
 
 	}
 }
@@ -72,7 +71,9 @@ int main(int argc, char *argv[])
 {
 	BTree testTree;
 
-	testTree.CreatBTree();
+	testTree.CreatBTree(testTree.root);
+	testTree.PreOder(Visit, testTree.root);
+
 	return 0;
 }
 
