@@ -35,6 +35,7 @@ void CreatTree_char (BitTree * root)
 	char ch;
 
 	ch = getchar();
+//cd ..	scanf("%c", &ch);
 
 	if (ch == '#')
 	{

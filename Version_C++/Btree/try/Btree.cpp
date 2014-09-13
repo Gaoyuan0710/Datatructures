@@ -29,40 +29,44 @@ void Visit(char ch){
 class BTNode;
 class BTNode{
 	public:
+		BTNode(){
+			element = '\0';
+			LChild = NULL;
+			RChild = NULL;
+		}
 		char element;
-		BTNode *LChild;
-		BTNode *RChild;
+		BTNode &LChild;
+		BTNode &RChild;
 };
 class BTree{
 	public:
-		BTree(BTNode *root = NULL){
-			this->root = root;
+		BTree(){
+			;
 		}
-		void CreatBTree(BTNode *root);
-		void PreOder(void (*Visit(char ch)), BTNode *root);
-		BTNode *root;
+		void CreatBTree(BTNode &root);
+		void PreOder(void (*Visit(char ch)), BTNode &root);
 };
 
-void BTree::CreatBTree(BTNode *root){
+void BTree::CreatBTree(BTNode &root){
 	char tmp;
 
 	cout << "Please input the word: ";
 	cin >> tmp;
 
 	if (tmp == '#') {
-		root = NULL;
+		root = new BTNode();
 	}
 	else{
-		*root = (BTNode)malloc(sizeof(BTNode));
-		*root->element = tmp;
-		CreatBTree(((*root)->LChild));
-		CreatBTree(((*root)->RChild));
+		root = new BTNode();
+		root.element = tmp;
+		CreatBTree(root.LChild);
+		CreatBTree(root.RChild);
 
 	}
 }
-void BTree::PreOder(void (*Visit)(char ch), BTNode *root){
+void BTree::PreOder(void (*Visit)(char ch), BTNode &root){
 	if (!root){
-		Visit(root->element);
+		Visit(root.element);
 		PreOder(Visit, root->LChild);
 		PreOder(Visit, root->RChild);
 	}
@@ -70,9 +74,10 @@ void BTree::PreOder(void (*Visit)(char ch), BTNode *root){
 int main(int argc, char *argv[])
 {
 	BTree testTree;
+	BTNode testNode;
 
-	testTree.CreatBTree(testTree.root);
-	testTree.PreOder(Visit, testTree.root);
+	testTree.CreatBTree(testNode);
+	testTree.PreOder(Visit, testNode);
 
 	return 0;
 }
